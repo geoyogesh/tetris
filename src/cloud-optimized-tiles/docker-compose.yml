@@ -1,0 +1,22 @@
+version: '3.7'
+services:
+  nginx:
+    image: nginx:1.19.2
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./data/:/usr/share/nginx/html
+    ports:
+      - "9000:80"
+
+  web-api:
+    build:
+      context: .
+      dockerfile: api-Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./api:/api
+    depends_on:
+      - nginx
+    environment:
+      FLASK_ENV: development
