@@ -9,7 +9,7 @@ data structures and algorithms optimized for object storage ideal for cloud nati
 # Data Structures
 - Array
   - Binary Search
-  - Rotate an array by d elements
+- matrix & multi dimentional
 - clustered index
   - get tuple at index
   - get tuples based on index range
